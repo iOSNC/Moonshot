@@ -5,7 +5,7 @@
 //  Created by noor on 2/25/25.
 //
 
-import Foundation
+import SwiftUI
 
 struct Mission : Codable, Identifiable {
     struct CrewRole : Codable {
@@ -28,5 +28,9 @@ struct Mission : Codable, Identifiable {
     
     var formattedLaunchDate: String {
         launchDate?.formatted(date: .abbreviated, time: .omitted) ?? "MA"
+    }
+    
+    var astronautIds : [String] {
+        crew.map { $0.name}
     }
 }
